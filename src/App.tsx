@@ -1,27 +1,32 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Box, Button, Container, CssBaseline } from "@material-ui/core";
+import React, { FC } from "react";
+import CustomTheme, { useCreateCustomTheme } from "./CustomTheme";
 
-function App(): JSX.Element {
+const App: FC = function App() {
+  const themeData = useCreateCustomTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This repo is setup with typescript, prettier and eslint to get you
-          going. Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CustomTheme theme={themeData}>
+      <CssBaseline />
+      <Container>
+        <Box className="App">
+          <header className="App-header">
+            <p>
+              Bootstraped with Create-React-App, This repo uses material ui and
+              comes with typescript, prettier, eslint and a custom theme
+              switcher to get you going.
+            </p>
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={themeData.toggleTheme}
+            >
+              Toggle theme
+            </Button>
+          </header>
+        </Box>
+      </Container>
+    </CustomTheme>
   );
-}
+};
 
 export default App;

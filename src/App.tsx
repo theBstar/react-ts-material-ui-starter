@@ -12,7 +12,7 @@ const App: FC = function App() {
           <header className="App-header">
             <p>
               Bootstraped with Create-React-App, This repo uses material ui and
-              comes with typescript, prettier, eslint and a custom theme
+              comes with react, typescript, prettier, eslint and a custom theme
               switcher to get you going.
             </p>
             <Button
